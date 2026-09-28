@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - ThanawiTracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>👋 أهلاً، <span id="userName">طالب</span></h1>
+            <p>شعبتك: <span id="userTrack">-</span> | الصف: <span id="userLevel">-</span></p>
+        </div>
+
+        <div class="card">
+            <h2>📈 التقدم الكلي</h2>
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span>التقدم</span>
+                    <span id="totalProgress">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="totalProgressBar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📚 المواد الدراسية</h2>
+            <div id="subjectsList"></div>
+        </div>
+
+        <div class="card">
+            <h2>🧮 حاسبة المجموع</h2>
+            <p style="margin-bottom:15px; color:#718096;">أدخل درجاتك (من 100):</p>
+            <div id="gradeCalculator"></div>
+            <button class="btn btn-primary" onclick="calcTotal()">احسب المجموع</button>
+            <div id="totalResult" style="margin-top:20px; font-size:1.5em; font-weight:bold;"></div>
+        </div>
+
+        <div class="card">
+            <h2>🤖 المساعد الذكي</h2>
+            <p style="margin-bottom:15px; color:#718096;">اختر المادة واسأل المساعد!</p>
+            
+            <label>اختر المادة:</label>
+            <select id="chatSubject">
+                <option value="arabic">اللغة العربية</option>
+                <option value="english">اللغة الإنجليزية</option>
+                <option value="history">التاريخ</option>
+                <option value="math">الرياضيات</option>
+                <option value="physics">الفيزياء</option>
+                <option value="chemistry">الكيمياء</option>
+                <option value="biology">الأحياء</option>
+            </select>
+
+            <div id="chatContainer">
+                <div class="chat-msg bot">
+                    <div class="msg-content">
+                        أهلاً! أنا مساعدك الذكي 🎓<br>
+                        اختر المادة واسألني أي سؤال!
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="اكتب سؤالك..." 
+                       onkeypress="if(event.key==='Enter') sendMsg()">
+                <button class="btn btn-primary" onclick="sendMsg()">إرسال</button>
+            </div>
+        </div>
+
+        <button class="btn btn-danger" onclick="logout()">تسجيل الخروج</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
