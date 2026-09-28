@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThanawiTracker - متتبع تقدم الثانوية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🎓 ThanawiTracker</h1>
+            <p>متتبع تقدمك في الثانوية العامة - مصر</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 اختر معلوماتك</h2>
+            
+            <label>الصف الدراسي:</label>
+            <select id="level">
+                <option value="">-- اختر الصف --</option>
+                <option value="2sec">الصف الثاني الثانوي</option>
+                <option value="3sec">الصف الثالث الثانوي</option>
+            </select>
+
+            <label>الشعبة:</label>
+            <select id="track">
+                <option value="">-- اختر الشعبة --</option>
+            </select>
+
+            <label>اسمك:</label>
+            <input type="text" id="name" placeholder="أدخل اسمك">
+
+            <button class="btn btn-primary" onclick="start()">ابدأ التتبع 🚀</button>
+        </div>
+
+        <div class="card">
+            <h2>✨ المميزات</h2>
+            <ul>
+                <li>✅ تتبع التقدم في كل مادة</li>
+                <li>✅ حاسبة المجموع التفاعلية</li>
+                <li>✅ مساعد ذكي (شات بوت) يشرحلك الدروس</li>
+                <li>✅ يدعم كل الشعب (علمي رياضة، علمي علوم، أدبي)</li>
+                <li>✅ تصميم احترافي مع وضع ليلي</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
